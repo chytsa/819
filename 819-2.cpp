@@ -6,6 +6,8 @@ using namespace std;
 class C819{
 	public:
 		C819(){
+			input.reserve(1000000);
+			ans.reserve(268435456);
 			input_sign = 1;
 			ans_sign = 1;
 		}
@@ -279,12 +281,13 @@ class C819{
 };
 
 int main(){
-	vector<char> s;
-	cout << s.max_size();
+	//vector<char> s;
+	//cout << s.max_size();
 	
     char buf;
     C819 A;
-	while(~scanf("%c", &buf)){
+    fgets(&buf, 1, stdin);
+	while(buf != EOF){
 		if(buf == '-'){
 			A.input_neg();
 		}
@@ -303,5 +306,7 @@ int main(){
 			A.save(buf);
 		}
 	}
+	A.op();
+	A.print_ans();
 	return 0;
 } 
